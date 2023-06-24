@@ -1,0 +1,124 @@
+/*
+    File: multitablestyle.css
+    GUI Assignment: Creating a Multiplication Table with JS - With Validation, Sliders, and Tabs
+    Ethan Rosenbaum, UML Computer Science, ethan_rosenbaum@student.uml.edu    
+    
+    Copyright (c) 2023 by Ethan. All Rights reserved. May be
+    freely copied or excerpted for educational purposes with credit to the author.
+
+    Header taken from HW assignment 1 example by Wenjin Zhou.
+*/
+
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    /* Gradient generated using https://cssgradient.io/ */
+    background: rgb(131,58,180);
+    background: -moz-linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(255,255,255,1) 50%, rgba(252,176,69,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(255,255,255,1) 50%, rgba(252,176,69,1) 100%);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(255,255,255,1) 50%, rgba(252,176,69,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#833ab4",endColorstr="#fcb045",GradientType=1);  
+    
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+#input_form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-style: dashed;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 25%;
+    float:left;
+    width:360px;
+}
+
+input {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Limit the size of the status field and use scrollbar if it fills. */
+#status {
+    max-height: 360px;
+    overflow: auto;
+    font-weight: bold;
+}
+
+
+#multitable {
+    height: 540px;       /* Prevent element from growing too large. */
+    overflow: auto;      /* Create scroll if we reach our height or width limits. */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+table, th, td {
+    padding: 5px;
+    border-style: groove;
+
+}
+
+table {
+    /* Center table */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+td:nth-child(odd) {
+    background: lightblue;
+}
+
+td:nth-child(3n+3) {
+    background: lightcoral;
+}
+
+footer {
+    margin: 0px auto;
+}
+/*
+ * Tab styling - adapted from fiddle posted on
+ * https://stackoverflow.com/questions/16678953/jquery-ui-tabs-dynamically-add-tab
+ *
+ */
+
+#tabs li .ui-icon-close {
+    float:left;
+    margin:0.4em 0.2em 0 0;
+    cursor:pointer;
+}
+
+#add_tab {
+    cursor:pointer;
+}
+
+div#tabs div {
+    display:inline-block;
+    padding:0px;
+    width:100%;
+    height:90%;
+
+}
+
+/* Limit the tab within the div and add scrollbars. */
+div#multitable_tabs > div {
+    overflow:auto;
+    height: 720px;
+}

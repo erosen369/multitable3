@@ -1,0 +1,98 @@
+<!--
+    File: index.html
+    GUI Assignment: Creating JS multiplication table - With Validation, Sliders, and Tabs
+    Ethan Rosenbaum, UML Computer Science, ethan_rosenbaum@student.uml.edu
+
+    Copyright (c) 2023 by Ethan. All Rights reserved. May be
+    freely copied or excerpted for educational purposes with credit to the author.
+
+    Header taken from HW assignment 1 example by Wenjin Zhou.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="css/multitablestyle.css">
+        <title>Multiplication Table</title>
+    </head>
+    <body>
+
+        <header>
+            <h1>Multiplication Table</h1>
+            <p>
+                Please enter two ranges of numbers in the fields below.
+                The values given must be between -50 and 50.
+
+            </p>
+            <p>
+                Values will be swapped if they are given in the wrong fields, i.e. the 
+                value given for the X minimum is larger than the X maximum value provided.
+            </p>
+        </header>
+
+        <!-- Form for user data input 
+            
+            Preventing bad sliders on form resubmit with bad data:
+                https://stackoverflow.com/questions/19482289/html5-slider-controls-not-resetting-back-to-default-value-when-page-is-refreshed
+        
+        -->
+        <div id="input_form">
+            <form id="multitable_form">
+                <label for="xrangelow">Minimum X Value</label><br>
+                <input type="text" id="xrangelow" autocomplete="off" name="minimum_x_value" value="0"><br>
+                <div id="sliderxlow"></div>
+                <br>
+
+                <label for="xrangehi">Maximum X Value</label><br>
+                <input type="text" id="xrangehi" autocomplete="off" name="maximum_x_value" value="5"><br>
+                <div id="sliderxhi"></div>
+                <br>
+
+                <label for="yrangelow">Minimum Y Value</label><br>
+                <input type="text" id="yrangelow" autocomplete="off" name="minimum_y_value" value="0"><br>
+                <div id="sliderylow"></div>
+                <br>
+
+                <label for="yrangehi">Maximum Y Value</label><br>
+                <input type="text" id="yrangehi" autocomplete="off" name="maximum_y_value" value="5"><br>
+                <div id="slideryhi"></div>
+                <br>
+   
+            </form>
+            <!-- Populated via JS script below - contains status messages -->
+            <div id="status"></div>
+            <button type="button" id="addTab" onclick="">Save Table</button>
+            <button type="button" id="removeTabs" onclick="">Delete Tab(s)</button>
+        </div>
+
+        <!-- Populated via JS script below - contains generated table -->
+        <div id="multitable"></div>
+
+        <h2>Saved Multiplication Tables</h2>
+        <!-- Populated via JS script below - contains generated table -->
+        <div id="multitable_tabs">
+            <ul>
+            </ul>
+        </div>
+
+        <!-- Javascript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <script src="js/multitable.js"></script> 
+
+        <footer>
+            <h2>Copyright &copy; Ethan Rosenbaum 2023</h2>
+            <p>
+                <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px"
+                        src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                        alt="Valid CSS!">
+                </a>
+            </p>
+        </footer>
+    </body>
+</html>
